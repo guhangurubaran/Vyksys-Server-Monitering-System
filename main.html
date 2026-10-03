@@ -7,7 +7,6 @@
     <style>
         body { font-family: Arial, sans-serif; text-align: center; background: #f4f4f4; margin: 0; padding: 0; }
         
-        /* Top Navigation Bar */
         header {
             background-color: #2c3e50;
             color: white;
@@ -36,18 +35,15 @@
         .tabs button:hover { background: #4b6584; }
         .tabs button.active { background: #10b981; font-weight: bold; }
 
-        /* Page Content Containers */
         .page-view { display: none; padding: 20px; }
         .page-view.active { display: block; }
 
-        /* Cards and Elements */
         .card { background: white; padding: 20px; margin: 15px auto; max-width: 600px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); text-align: left; }
         .card h2 { text-align: center; color: #333; }
         .card p { text-align: center; }
         h1 { color: #333; margin-top: 10px;}
         .status-box { padding: 15px; border-radius: 8px; font-size: 1.3em; font-weight: bold; margin: 15px auto; max-width: 600px; border: 2px solid; }
         
-        /* AI Status Colors */
         .green { color: #155724; background-color: #d4edda; border-color: #c3e6cb; }
         .orange { color: #856404; background-color: #fff3cd; border-color: #ffeeba; }
         .red { color: #721c24; background-color: #f8d7da; border-color: #f5c6cb; }
@@ -55,7 +51,6 @@
         ul { padding-left: 20px; color: #555; }
         canvas { max-width: 100%; }
 
-        /* About Page Specific styling */
         .about-text {
             font-size: 1.2em;
             line-height: 1.6;
@@ -111,19 +106,14 @@
     </div>
 
     <script>
-        // Tab Switching Logic
         function switchTab(tabId) {
-            // Hide all pages
             document.querySelectorAll('.page-view').forEach(el => el.classList.remove('active'));
-            // Remove active color from all buttons
             document.querySelectorAll('.tabs button').forEach(el => el.classList.remove('active'));
             
-            // Show the selected page and highlight the button
             document.getElementById(tabId).classList.add('active');
             document.getElementById('btn-' + tabId).classList.add('active');
         }
 
-        // --- Data Fetching and Charts Logic ---
         let readingCount = 0;
         const maxHistory = 15;
 
